@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React ,{useState,useEffect} from "react";
 
 
 export default function Alli (){
@@ -17,7 +17,10 @@ function handleCreateRandomHexColor (){
 
     }
     setColor(hexColor);
+   
 }
+
+
 function handleCreateRandomRgbColor (){
     const r = randomColor(256);
     const g = randomColor(256);
@@ -28,6 +31,16 @@ function handleCreateRandomRgbColor (){
 
     }
 
+
+     useEffect (() =>{
+    if( type === "hex"){
+        handleCreateRandomHexColor();
+    }
+    else {
+        handleCreateRandomRgbColor();}
+        
+    },[type])
+
    
     return (
         <>
@@ -37,6 +50,11 @@ function handleCreateRandomRgbColor (){
                 <button className="btn" onClick ={()=> setType("rgb")}>Create Rgb Color</button>
                 </div>
                 <div style ={{ display :"flex",flexDirection :"row",justifyContent :"center"}}><button className="btn" onClick ={type === "hex" ? handleCreateRandomHexColor : handleCreateRandomRgbColor  }>Create random Color </button>
+           </div>
+
+           <div style ={{display :"flex",fontSize:"18px", justifyContent : "center",gap :"10px",flexDirection :"column",alignItems :"center"}}>   
+            <h2 >{type === "hex" ? "Hex" : "Rgb"} </h2>
+            <h3>Color Value : {color}</h3>
            </div>
                  
         </div>
