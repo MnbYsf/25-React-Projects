@@ -76,3 +76,10 @@
 .btn:active {
   background-color: #314732;
 }
+
+.active {
+  color: gold;
+}
+.inactive {
+  color: grey;
+}

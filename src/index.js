@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Pro from './components/Pro';
 import Alli from './components/Alli';
+import Stars from "./components/Stars"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Alli />
+    <Stars noOfStars ={8}  />
   </React.StrictMode>
 );
 
